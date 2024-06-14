@@ -9,7 +9,7 @@ $nacimiento = date('Y-m-d', strtotime($_POST['fechaNacimiento']));
 $sexo = $_POST['genero'];
 
 try {
-    // Cifrar la contraseña usando bcrypt
+
     $hashed_password = password_hash($contrasena, PASSWORD_DEFAULT);
     $con = $conexiones->prepare("INSERT INTO Usuarios(Nombre, Apellidos, CorreoElectronico, Contraseña, FechaNacimiento, Genero) VALUES (:nombre, :apellidos, :email, :contrasena, :nacimiento, :sexo)");
 
